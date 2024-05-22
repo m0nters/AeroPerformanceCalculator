@@ -30,7 +30,7 @@ double AirCraft::power_required(double velocity, double altitude) {
 
 double const RANGE_MIN = 0;
 double const RANGE_MAX = 300;
-double const STEP = (RANGE_MAX - RANGE_MIN) / 100;
+double const STEP = (RANGE_MAX - RANGE_MIN) / 200;
 
 void AirCraft::thrust_required_chart_draw() {
 	QLineSeries* thrustRequiredSeries_altitude1 = new QLineSeries();

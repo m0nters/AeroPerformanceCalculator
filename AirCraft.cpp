@@ -7,6 +7,10 @@ AirCraft::AirCraft(QWidget* parent)
 {
 	ui.setupUi(this);
 
+	// first show the charts while nothing's here
+	thrust_required_chart_draw();
+	power_required_chart_draw();
+
 	// Initialize the QDoubleValidator
 	aspectRatioValidator = new QDoubleValidator(this);
 	aspectRatioValidator->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));

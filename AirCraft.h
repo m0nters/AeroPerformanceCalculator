@@ -60,7 +60,7 @@ private:
 	double altitude2;
 	double altitude3;
 
-	std::string altitude1_note;
-	std::string altitude2_note;
-	std::string altitude3_note;
+	std::string info_altitude1_str;
+	std::string info_altitude2_str;
+	std::string info_altitude3_str;
 };
