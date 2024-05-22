@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AirCraftClass</class>
+ <widget class="QMainWindow" name="AirCraftClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1519</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AirCraft</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="logo">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>125</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>pic</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="thrust_required_label">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>10</y>
+      <width>311</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Thrust Required Curve</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="power_required_label">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>370</y>
+      <width>411</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Power Required Curve</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>432</y>
+      <width>721</width>
+      <height>262</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QLabel" name="Altitudes">
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Altitudes</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QLabel" name="Altitude1_label">
+           <property name="text">
+            <string>Altitude 1 (m)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="Altitude1_lineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+        <widget class="QLabel" name="constraint1">
+         <property name="text">
+          <string>V max: 295.00 TUS R/C max: 42.77 ft/s Max range: 4,626,544.96 11 Max endurance: 10.56 hrs</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <item>
+          <widget class="QLabel" name="Altitude2_label">
+           <property name="text">
+            <string>Altitude 2 (m)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="Altitude2_lineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+        <widget class="QLabel" name="constraint2">
+         <property name="text">
+          <string>V max: 290.00 ft/s R/C max: 24.71 ft/s Max range: 4,625,476.61 1 Max endurance: 8.79 hrs</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <item>
+          <widget class="QLabel" name="Altitude3_label">
+           <property name="text">
+            <string>Altitude 3 (m)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="Altitude3_lineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+        <widget class="QLabel" name="constraint3">
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>V max: 60.00 ft   R/C max: 9.00 ft/s   Max range: 4,625,542.87 ft   Max endurance: 7.07 hrs
+Service ceiling is 32,070.00 ft
+Absolute ceiling is 33,760.00 ft
+Time to fly to 12,000.00 ft is 6.14 min
+Time to fly to 25,000.00 ft is 20.31 min</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>112</y>
+      <width>721</width>
+      <height>324</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="QLabel" name="AircraftSpecification">
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Aircraft's Specification</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="AspectRatio_label">
+           <property name="text">
+            <string>Aspect Ratio</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="AspectRatio_lineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="WingArea_label">
+           <property name="text">
+            <string>Wing Area (m2)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="WingArea_lineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="OswaldEfficiencyFactor_label">
+           <property name="text">
+            <string>Oswald efficiency factor</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="OswaldEfficiencyFactor_lineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="GrossWeight_label">
+           <property name="text">
+            <string>Gross Weight (kg)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="GrossWeight_llineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="ZeroliftDragCoefficient_label">
+           <property name="text">
+            <string>Zero-lift Drag Coefficient</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="ZeroliftDragCoefficient_lineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="Enginepower_label">
+           <property name="text">
+            <string>Engine power (W)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="Enginepower_lineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QLabel" name="PropellerEfficiency_label">
+           <property name="text">
+            <string>Propeller Efficiency</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="PropellerEfficiency_lineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="SFC_label">
+           <property name="text">
+            <string>SFC (N/kg.h)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="SFC_lineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QLabel" name="FuelWeight_label">
+           <property name="text">
+            <string>Fuel Weight (kg)</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="FuelWeight_lineEdit"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QCheckBox" name="dynamic_check">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>720</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;(disable by default since it may affect performance) Enable this when you want the graphs to change immediately when you change an info in the input. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="whatsThis">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Dynamic change</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="draw_button">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>720</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;it may take several time to draw large graphs&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string>Draw</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="thrust_required_chart">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>60</y>
+      <width>631</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_13"/>
+   </widget>
+   <widget class="QFrame" name="power_required_chart">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>440</y>
+      <width>631</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_14"/>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="AirCraft.qrc"/>
+ </resources>
+ <connections/>
+</ui>
