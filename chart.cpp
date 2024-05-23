@@ -29,18 +29,34 @@ double AirCraft::power_required(double velocity, double altitude) {
 }
 
 double const RANGE_MIN = 0;
-double const RANGE_MAX = 300;
-double const STEP = (RANGE_MAX - RANGE_MIN) / 200;
+double const RANGE_MAX = 500;
+double const STEP = (RANGE_MAX - RANGE_MIN) / 400;
 
 void AirCraft::thrust_required_chart_draw() {
+	if (thrustRequiredSeries_altitude1_trashholder) { // since they are all initialized at the same time so we can just check one of them
+		delete thrustRequiredSeries_altitude1_trashholder;
+		delete thrustRequiredSeries_altitude2_trashholder;
+		delete thrustRequiredSeries_altitude3_trashholder;
+		delete thrustRequiredChart_trashholder;
+		delete thrustRequiredChartView_trashholder;
+	}
+
 	QLineSeries* thrustRequiredSeries_altitude1 = new QLineSeries();
 	QLineSeries* thrustRequiredSeries_altitude2 = new QLineSeries();
 	QLineSeries* thrustRequiredSeries_altitude3 = new QLineSeries();
+	QChart* thrustRequiredChart = new QChart();
+	QChartView* thrustRequiredChartView = new QChartView(thrustRequiredChart);
+
+	// preventing memory leak
+	thrustRequiredSeries_altitude1_trashholder = thrustRequiredSeries_altitude1;
+	thrustRequiredSeries_altitude2_trashholder = thrustRequiredSeries_altitude2;
+	thrustRequiredSeries_altitude3_trashholder = thrustRequiredSeries_altitude3;
+	thrustRequiredChart_trashholder = thrustRequiredChart;
+	thrustRequiredChartView_trashholder = thrustRequiredChartView;
+
 	thrustRequiredSeries_altitude1->setName(QString::fromStdString(std::to_string((int)altitude1) + "m"));
 	thrustRequiredSeries_altitude2->setName(QString::fromStdString(std::to_string((int)altitude2) + "m"));
 	thrustRequiredSeries_altitude3->setName(QString::fromStdString(std::to_string((int)altitude3) + "m"));
-	QChart* thrustRequiredChart = new QChart();
-	QChartView* thrustRequiredChartView = new QChartView(thrustRequiredChart);
 
 	for (double i = RANGE_MIN; i <= RANGE_MAX; i += STEP) {
 		thrustRequiredSeries_altitude1->append(i, thrust_required(i, altitude1));
@@ -64,14 +80,30 @@ void AirCraft::thrust_required_chart_draw() {
 }
 
 void AirCraft::power_required_chart_draw() {
+	if (powerRequiredSeries_altitude1_trashholder) {
+		delete powerRequiredSeries_altitude1_trashholder;
+		delete powerRequiredSeries_altitude2_trashholder;
+		delete powerRequiredSeries_altitude3_trashholder;
+		delete powerRequiredChart_trashholder;
+		delete powerRequiredChartView_trashholder;
+	}
+
 	QLineSeries* powerRequiredSeries_altitude1 = new QLineSeries();
 	QLineSeries* powerRequiredSeries_altitude2 = new QLineSeries();
 	QLineSeries* powerRequiredSeries_altitude3 = new QLineSeries();
+	QChart* powerRequiredChart = new QChart();
+	QChartView* powerRequiredChartView = new QChartView(powerRequiredChart);
+
+	// preventing memory leak
+	powerRequiredSeries_altitude1_trashholder = powerRequiredSeries_altitude1;
+	powerRequiredSeries_altitude2_trashholder = powerRequiredSeries_altitude2;
+	powerRequiredSeries_altitude3_trashholder = powerRequiredSeries_altitude3;
+	powerRequiredChart_trashholder = powerRequiredChart;
+	powerRequiredChartView_trashholder = powerRequiredChartView;
+
 	powerRequiredSeries_altitude1->setName(QString::fromStdString(std::to_string((int)altitude1) + "m"));
 	powerRequiredSeries_altitude2->setName(QString::fromStdString(std::to_string((int)altitude2) + "m"));
 	powerRequiredSeries_altitude3->setName(QString::fromStdString(std::to_string((int)altitude3) + "m"));
-	QChart* powerRequiredChart = new QChart();
-	QChartView* powerRequiredChartView = new QChartView(powerRequiredChart);
 
 	for (double i = RANGE_MIN; i <= RANGE_MAX; i += STEP) {
 		powerRequiredSeries_altitude1->append(i, power_required(i, altitude1));

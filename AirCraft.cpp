@@ -2,8 +2,12 @@
 
 AirCraft::AirCraft(QWidget* parent)
 	: QMainWindow(parent),
-	aspect_ratio(0), wing_area(0), oswald_efficiency_factor(0), gross_weight(0), zero_lift_drag_coefficient(0), 
-	engine_power(0), propeller_efficiency(0), sfc(0), fuel_weight(0), altitude1(0), altitude2(0), altitude3(0)
+	aspect_ratio(0), wing_area(0), oswald_efficiency_factor(0), gross_weight(0), zero_lift_drag_coefficient(0),
+	engine_power(0), propeller_efficiency(0), sfc(0), fuel_weight(0), altitude1(0), altitude2(0), altitude3(0),
+	thrustRequiredSeries_altitude1_trashholder(nullptr), thrustRequiredSeries_altitude2_trashholder(nullptr), thrustRequiredSeries_altitude3_trashholder(nullptr), 
+	thrustRequiredChart_trashholder(nullptr), thrustRequiredChartView_trashholder(nullptr),
+	powerRequiredSeries_altitude1_trashholder(nullptr), powerRequiredSeries_altitude2_trashholder(nullptr), powerRequiredSeries_altitude3_trashholder(nullptr),
+	powerRequiredChart_trashholder(nullptr), powerRequiredChartView_trashholder(nullptr)
 {
 	ui.setupUi(this);
 
@@ -39,14 +43,14 @@ AirCraft::AirCraft(QWidget* parent)
 	ui.logo->setPixmap(pic.scaled(w, h, Qt::KeepAspectRatio));
 
 	// get info from UI change
-	connect(ui.AspectRatio_lineEdit, &QLineEdit::textChanged, this, &AirCraft::aspect_ratio_changed); 
-	connect(ui.WingArea_lineEdit, &QLineEdit::textChanged, this, &AirCraft::wing_area_changed); 
+	connect(ui.AspectRatio_lineEdit, &QLineEdit::textChanged, this, &AirCraft::aspect_ratio_changed);
+	connect(ui.WingArea_lineEdit, &QLineEdit::textChanged, this, &AirCraft::wing_area_changed);
 	connect(ui.OswaldEfficiencyFactor_lineEdit, &QLineEdit::textChanged, this, &AirCraft::oswald_efficiency_factor_changed);
-	connect(ui.GrossWeight_llineEdit, &QLineEdit::textChanged, this, &AirCraft::gross_weight_changed); 
-	connect(ui.ZeroliftDragCoefficient_lineEdit, &QLineEdit::textChanged, this, &AirCraft::zero_lift_drag_coefficient_changed); 
-	connect(ui.Enginepower_lineEdit, &QLineEdit::textChanged, this, &AirCraft::engine_power_changed); 
-	connect(ui.PropellerEfficiency_lineEdit, &QLineEdit::textChanged, this, &AirCraft::propeller_efficiency_changed); 
-	connect(ui.SFC_lineEdit, &QLineEdit::textChanged, this, &AirCraft::sfc_changed); 
+	connect(ui.GrossWeight_llineEdit, &QLineEdit::textChanged, this, &AirCraft::gross_weight_changed);
+	connect(ui.ZeroliftDragCoefficient_lineEdit, &QLineEdit::textChanged, this, &AirCraft::zero_lift_drag_coefficient_changed);
+	connect(ui.Enginepower_lineEdit, &QLineEdit::textChanged, this, &AirCraft::engine_power_changed);
+	connect(ui.PropellerEfficiency_lineEdit, &QLineEdit::textChanged, this, &AirCraft::propeller_efficiency_changed);
+	connect(ui.SFC_lineEdit, &QLineEdit::textChanged, this, &AirCraft::sfc_changed);
 	connect(ui.FuelWeight_lineEdit, &QLineEdit::textChanged, this, &AirCraft::fuel_weight_changed);
 
 	connect(ui.Altitude1_lineEdit, &QLineEdit::textChanged, this, &AirCraft::altitude1_changed);
@@ -57,7 +61,5 @@ AirCraft::AirCraft(QWidget* parent)
 	connect(ui.draw_button, &QPushButton::clicked, this, &AirCraft::on_draw_button_clicked);
 }
 
-AirCraft::~AirCraft()
-{
-	
+AirCraft::~AirCraft() {
 }

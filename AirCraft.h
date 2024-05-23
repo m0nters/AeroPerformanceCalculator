@@ -8,6 +8,7 @@
 #include <qtooltip.h>
 #include <qchartview.h>
 #include <cmath>
+#include <iostream>
 #include "ui_AirCraft.h"
 
 class AirCraft : public QMainWindow
@@ -25,6 +26,7 @@ public:
 	~AirCraft();
 
 public slots:
+	// input change
 	void aspect_ratio_changed(const QString& text);
 	void wing_area_changed(const QString& text);
 	void oswald_efficiency_factor_changed(const QString& text);
@@ -38,14 +40,14 @@ public slots:
 	void altitude1_changed(const QString& text);
 	void altitude2_changed(const QString& text);
 	void altitude3_changed(const QString& text);
-	// =================
+	// physical control
 	void on_dynamic_check_checked();
 	void on_draw_button_clicked();
 private:
 	Ui::AirCraftClass ui;
 	QDoubleValidator* aspectRatioValidator; // Add a QDoubleValidator
 
-	// member variables
+	// backend opponent: member variables
 	double aspect_ratio;
 	double wing_area;
 	double oswald_efficiency_factor;
@@ -63,4 +65,17 @@ private:
 	std::string info_altitude1_str;
 	std::string info_altitude2_str;
 	std::string info_altitude3_str;
+
+	// UI opponent trash holder
+	QLineSeries* thrustRequiredSeries_altitude1_trashholder;
+	QLineSeries* thrustRequiredSeries_altitude2_trashholder;
+	QLineSeries* thrustRequiredSeries_altitude3_trashholder;
+	QChart* thrustRequiredChart_trashholder;
+	QChartView* thrustRequiredChartView_trashholder;
+
+	QLineSeries* powerRequiredSeries_altitude1_trashholder;
+	QLineSeries* powerRequiredSeries_altitude2_trashholder;
+	QLineSeries* powerRequiredSeries_altitude3_trashholder;
+	QChart* powerRequiredChart_trashholder;
+	QChartView* powerRequiredChartView_trashholder;
 };
